@@ -1,0 +1,38 @@
+{
+  "name": "GBO3-Nightwatch-Automation",
+  "private": true,
+  "version": "1.0.0",
+  "description": "NightwatchJS with Selenium Server",
+  "main": "globals.js",
+  "scripts": {
+    "testrail": "nightwatch -c config/backOffice.conf.testrail.js --retries 1",
+    "test": "nightwatch",
+    "headless": "nightwatch -e headlessChrome",
+    "chrome": "nightwatch -e chrome",
+    "firefox": "nightwatch -e firefox",
+    "edge": "nightwatch -e edge",
+    "ie": "nightwatch -e ie",
+    "all": "nightwatch -e headlessChrome,chrome,edge",
+    "update": "npx npm-check-updates --upgrade && npm install && npm audit fix",
+    "sql": "node sqlScripts/sql.js",
+    "createTestRun": "node testrail/createTestRun.js",
+    "closeTestRun": "node testrail/closeTestRun.js",
+    "runReport": "node testrail/runReport.js"
+  },
+  "author": "Cassandra",
+  "dependencies": {
+    "chromedriver": "90.0.0",
+    "edgedriver": "4.17134.1",
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.23.2",
+    "geckodriver": "2.0.0",
+    "iedriver": "3.150.1",
+    "load-json-file": "latest",
+    "msnodesqlv8": "latest",
+    "mssql": "7.1.0",
+    "nightwatch": "1.6.4",
+    "selenium-server": "3.141.59",
+    "write-json-file": "latest"
+  }
+}

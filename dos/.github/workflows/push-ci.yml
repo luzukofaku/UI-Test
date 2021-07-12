@@ -1,0 +1,41 @@
+name: Github-CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  chromeHeadLess: 
+    name: Chrome Headless
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: 10.x
+    - run: npm install
+    - run: npm test
+  firefox: 
+    name: Firefox
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: 10.x
+    - run: npm install
+    - run: npm run firefox
+  Chrome: 
+    name: Chrome
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: 10.x
+    - run: npm install
+    - run: npm run chrome
